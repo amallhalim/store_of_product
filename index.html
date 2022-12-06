@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- all page container///////////////////////////////// -->
+<div class="crud">
+    <div class="head">
+        <h2>crud</h2>
+        <p>Lorem, ipsum dolor sit amet corrupti!</p>
+    </div>
+
+    <div class="inputs">
+    <input type="text" id="title" placeholder="title">
+    <div class="price">
+        <!-- onkeyup is event work direacty always  when you 
+            stop writting in the field  -->
+        <input onkeyup="get_total()" type="number " id="price" placeholder="price">
+        <input onkeyup="get_total()" type="number " id="taxes" placeholder="taxes">
+        <input onkeyup="get_total()" type="number " id="ads" placeholder="ads">
+        <input onkeyup="get_total()" type="number " id="discount" placeholder="discount">
+        <small id="total">   0 </small>
+    </div>    
+    <input type="number " id="count" placeholder="count">
+    <input type="text " id="catagory" placeholder="catagory"> 
+    <button id="submit">create</button>
+    </div>
+
+    <!--  start output_container -->
+    <div class="outputs">
+
+    <div class="search_block">
+        <!-- onkeyup when you take of keyboard or stop typing -->
+        <input onkeyup="search(this.value)" type="text" id="search" placeholder="search">
+        <div class="btn_search">
+            <!-- this function work when click on btn -->
+            <!-- this.id   is get id of the element you are in -->
+            <button onclick="get_search_mood(this.id)" id="search_by_title">search_by_title</button>
+            <button onclick="get_search_mood(this.id)" id="search_by_category">search_by_category</button>
+        </div>
+    </div>
+    <!-- appeare only when found items -->
+    <div id="deleteAll">  </div>
+
+    <table>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>price</th>
+        <th>taxes</th>
+        <th>ads</th>
+        <th>discount</th>
+        <th>total</th>
+        <th>catagory</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+    <tbody id="body">     </tbody>
+    </table>
+
+    </div>
+    <!--  end output_container -->
+
+</div>
+<!-- finish the container of all page //////////////////////////////// -->
+    <script src="./script.js"></script>
+</body>
+</html>
